@@ -35,4 +35,5 @@ private:
 
 	UPROPERTY(VisibleAnywhere)
 	class UFloatingPawnMovement* Movement;
+	//클래스의 포인터를 통해 자료형에 맞는 데이터를 미리 적재할 수 있게 도와준다.
 };
