@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -35,5 +35,5 @@ private:
 
 	UPROPERTY(VisibleAnywhere)
 	class UFloatingPawnMovement* Movement;
-	//Å¬·¡½ºÀÇ Æ÷ÀÎÅÍ¸¦ ÅëÇØ ÀÚ·áÇü¿¡ ¸Â´Â µ¥ÀÌÅÍ¸¦ ¹Ì¸® ÀûÀçÇÒ ¼ö ÀÖ°Ô µµ¿ÍÁØ´Ù.
+	//í´ë˜ìŠ¤ì˜ í¬ì¸í„°ë¥¼ í†µí•´ ìë£Œí˜•ì— ë§ëŠ” ë°ì´í„°ë¥¼ ë¯¸ë¦¬ ì ì¬í•  ìˆ˜ ìˆê²Œ ë„ì™€ì¤€ë‹¤.
 };
