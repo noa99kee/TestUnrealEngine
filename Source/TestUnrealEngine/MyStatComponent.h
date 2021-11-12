@@ -6,6 +6,7 @@
 #include "Components/ActorComponent.h"
 #include "MyStatComponent.generated.h"
 
+DECLARE_MULTICAST_DELEGATE(FOnHpChanged);
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class TESTUNREALENGINE_API UMyStatComponent : public UActorComponent
@@ -26,10 +27,13 @@ public:
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
 	void SetLevel(int32 NewLevel);
+	void SetHp(int32 NewHp);
 	void OnAttacked(float DamageAmount);
 
 	int32 GetLevel() { return Level; }
 	int32 GetHp() { return Hp; }
+	int32 GetMaxHp() { return MaxHp; }
+	float GetHpRatio() { return Hp / (float)MaxHp; }
 	int32 GetAttack() { return Attack; }
 		
 private:
@@ -40,5 +44,11 @@ private:
 	int32 Hp;
 
 	UPROPERTY(EditAnywhere, Category = Stat, Meta = (AllowPrivateAccess = true))
+	int32 MaxHp;
+
+	UPROPERTY(EditAnywhere, Category = Stat, Meta = (AllowPrivateAccess = true))
 	int32 Attack;
+
+public:
+	FOnHpChanged OnHpChanged;
 };
