@@ -6,6 +6,8 @@
 #include "GameFramework/Character.h"
 #include "MyCharacter.generated.h"
 
+DECLARE_MULTICAST_DELEGATE(FOnAttackEnd);
+
 UCLASS()
 class TESTUNREALENGINE_API AMyCharacter : public ACharacter
 {
@@ -34,6 +36,8 @@ public:
 	void Attack();
 
 	void AtackCheck();
+
+	FOnAttackEnd OnAttackEnd;
 
 	UFUNCTION()
 	void OnAttackMontageEnded(UAnimMontage* Montage, bool binterrupted);
